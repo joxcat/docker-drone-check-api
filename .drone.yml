@@ -4,9 +4,9 @@ name: default
 
 steps:
   - name: build
-    image: plugins/drone-check-api
+    image: plugins/docker
     settings:
-      repo: blackksoulls/
+      repo: blackksoulls/drone-check-api
       username:
         from_secret: docker_username
       password:
