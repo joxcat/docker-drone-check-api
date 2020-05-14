@@ -1,4 +1,4 @@
-FROM python/3.9-rc-alpine
+FROM python:3.9-rc-alpine
 
 ENV APP_ID "Fill me with your app ID"
 ENV INSTALL_ID "Fill me with the installation ID of your app"
