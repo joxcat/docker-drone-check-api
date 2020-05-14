@@ -1,7 +1,23 @@
 #!/bin/bash
-export GH_CHK_IN_APP_ID=$1
-export GH_CHK_IN_INSTALLATION_ID=$2
-echo "$3" >> /temp.private-key.pem
+if [[-z $APP_ID]]; then
+  export GH_CHK_IN_APP_ID=$2
+else
+  export GH_CHK_IN_APP_ID=$APP_ID
+fi
+
+if [[-z $INSTALL_ID]]; then
+  export GH_CHK_IN_INSTALLATION_ID=$2
+else
+  export GH_CHK_IN_INSTALLATION_ID=$INSTALL_ID
+fi
+
+if [[-z $APP_PKEY]]; then
+  pkey=$3
+else
+  pkey=$APP_PKEY
+fi
+
+echo "$pkey" >> /temp.private-key.pem
 export GH_CHK_IN_PRIVATE_KEY_FILE=/temp.private-key.pem
 
 name=$DRONE_STAGE_NAME
