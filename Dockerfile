@@ -4,7 +4,7 @@ ENV APP_ID "Fill me with your app ID"
 ENV INSTALL_ID "Fill me with the installation ID of your app"
 ENV APP_PKEY "Fill me with a private key for your app"
 
-RUN apk add --update coreutils gcc musl-dev linux-headers && rm -rf /var/cache/apk/*
+RUN apk add --update coreutils gcc musl-dev libffi-dev openssl-dev && rm -rf /var/cache/apk/*
 RUN pip install check-in
 
 COPY ./drone.sh /drone.sh
