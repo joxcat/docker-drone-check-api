@@ -1,17 +1,17 @@
 #!/bin/bash
-if [[-z $APP_ID]]; then
+if [[ -z $APP_ID ]]; then
   export GH_CHK_IN_APP_ID=$2
 else
   export GH_CHK_IN_APP_ID=$APP_ID
 fi
 
-if [[-z $INSTALL_ID]]; then
+if [[ -z $INSTALL_ID ]]; then
   export GH_CHK_IN_INSTALLATION_ID=$2
 else
   export GH_CHK_IN_INSTALLATION_ID=$INSTALL_ID
 fi
 
-if [[-z $APP_PKEY]]; then
+if [[ -z $APP_PKEY ]]; then
   pkey=$3
 else
   pkey=$APP_PKEY
